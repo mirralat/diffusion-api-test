@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example Form</title>
+</head>
+<body>
+<form action="" method="post">
+        <p>Prompt:</p>
+        <input id="123" type="text" required>
+        <button type="button" onclick="send()"> Send! </button>
+    <script>
+        function send() {
+            var data = document.getElementById('123').value
+            const request = new XMLHttpRequest()
+            request.open('POST', `/set_data/${JSON.stringify(data)}`)
+            request.send()
+        }
+    </script>
+</form>
+</body>
+</html>
